@@ -58,6 +58,23 @@ post '/visit' do
 end
 
 
+get '/showusers' do
+	db = get_db
+	@results = db.execute 'select * from users'
+	erb :showusers
+end
+
+
+
+
+
+
+
+
+
+
 def get_db
-	return SQLite3::Database.new 'barbershop.db'
+	db = SQLite3::Database.new 'barbershop.db'
+	db.results_as_hash = true
+	return db
 end

@@ -1,0 +1,27 @@
+<h2>Записаться</h2>
+<p>Список всех записавшихся клиентов</p>
+
+<table class="table table-striped">
+ 	<thead>
+ 		<tr>
+			<th>Имя</th>
+			<th>Телефон</th>
+			<th>Дата записи</th>
+			<th>Парикмахер</th>
+			<th>Цвет</th>
+ 		</tr>
+ 	</thead>
+
+ 	<tbody>
+ 		<% @results.each do |row| %>
+ 			<tr>
+	 			<th><%= row['username'] %></th>
+	 			<th><%= row['phone'] %></th>
+	 			<th><%= row['datestamp'] %></th>
+	 			<th><%= row['barber'] %></th>
+	 			<th style="background-color: <%= row['color'] %>"><%= row['color'] %></th>
+
+ 			</tr>
+ 		<% end %>
+ 	</tbody>
+</table>
